@@ -12,6 +12,11 @@ const trackUrls = [
 import { useState } from 'react';
 
 const App = () => {
+  const { data: tracks } = useQuery({
+		queryKey: ['tracks'],
+		queryFn: fetchTracks
+});
+console.log
   const [trackIndex, setTrackIndex] = useState(0)
   const goToNextTrack = () => {
     setTrackIndex(trackIndex + 1);
